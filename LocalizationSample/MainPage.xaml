@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LocalizationSample.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:LocalizationSample"
+    xmlns:localization="clr-namespace:LocalizationSample.Resources.Localization"
+    Title="{Binding LocalizationResourceManager[MainPageTitle], Mode=OneWay}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <!--<Image
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                Source="dotnet_bot.png" />-->
+
+            <Label
+                FontSize="32"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Text="Hello, World!" />
+            <!--  Text="{x:Static localization:AppResources.Intro}"  -->
+            <Label
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="{Binding LocalizationResourceManager[Intro], Mode=OneWay}" />
+            <Label
+                x:Name="lblCodeBehind"
+                FontSize="18"
+                HorizontalOptions="Center" />
+            <Label
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="{localization:TranslateExtention Intro}" />
+            <Button
+                x:Name="CounterBtn"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Click me" />
+            <Button HorizontalOptions="Center" Text="{localization:TranslateExtention Intro}" />
+            <DatePicker />
+            <Picker
+                x:Name="pickerLang"
+                Title="Select a language"
+                SelectedIndexChanged="pickerLang_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>ta-IN</x:String>
+                        <x:String>es-ES</x:String>
+                        <x:String>en-US</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
