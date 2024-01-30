@@ -7,15 +7,18 @@ namespace LocalizationSample
     {
         int count = 0;
         public LocalizationResourceManager LocalizationResourceManager { get; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "For future reference")]
         public MainPage()
         {
             InitializeComponent();
             LocalizationResourceManager = LocalizationResourceManager.Instance;
             lblCodeBehind.SetBinding(Label.TextProperty, new Binding("LocalizationResourceManager[Intro]", BindingMode.OneWay));
+            
             //lblCodeBehind.Text= LocalizationResourceManager.Instance["Intro"].ToString();
             //BindingContext = this;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "For future reference")]
         private void OnCounterClicked(object sender, EventArgs e)
         {
             count++;
