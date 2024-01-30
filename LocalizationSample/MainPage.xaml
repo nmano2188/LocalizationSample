@@ -48,7 +48,7 @@
             <Picker
                 x:Name="pickerLang"
                 Title="Select a language"
-                SelectedIndexChanged="pickerLang_SelectedIndexChanged">
+                SelectedIndexChanged="PickerLang_SelectedIndexChanged">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>ta-IN</x:String>

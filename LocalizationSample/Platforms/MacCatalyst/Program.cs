@@ -3,6 +3,7 @@ using UIKit;
 
 namespace LocalizationSample
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S1118:Utility classes should not have public constructors", Justification = "Not valid here")]
     public class Program
     {
         // This is the main entry point of the application.

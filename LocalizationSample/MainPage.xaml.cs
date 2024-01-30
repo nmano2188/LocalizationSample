@@ -32,7 +32,7 @@ namespace LocalizationSample
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
 
-        private void pickerLang_SelectedIndexChanged(object sender, EventArgs e)
+        private void PickerLang_SelectedIndexChanged(object sender, EventArgs e)
         {
             LocalizationResourceManager.Instance.SetCulture(new CultureInfo(pickerLang.Items[pickerLang.SelectedIndex]));
             lblCodeBehind.Text = LocalizationResourceManager.Instance["Intro"].ToString();
